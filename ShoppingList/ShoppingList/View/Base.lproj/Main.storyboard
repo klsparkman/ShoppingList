@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4fw-k1-dWo">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Grocery List-->
+        <scene sceneID="9be-BT-E0O">
+            <objects>
+                <tableViewController id="FSH-QS-ooA" customClass="ListTableViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lav-I4-YKK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" rowHeight="59" id="Gln-Yt-wAs" customClass="CustomTableViewCell" customModule="ShoppingList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="59"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gln-Yt-wAs" id="9iP-AV-0LS">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="296" translatesAutoresizingMaskIntoConstraints="NO" id="sAh-dK-bAE">
+                                            <rect key="frame" x="4" y="4" width="406" height="51"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQy-in-4JS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="74" height="51"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGn-Yd-O6l">
+                                                    <rect key="frame" x="370" y="0.0" width="36" height="51"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="Bl4-qz-dnq"/>
+                                                    </constraints>
+                                                    <state key="normal" image="square" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="buttonTapped:" destination="7Fj-PQ-lxu" eventType="touchUpInside" id="lrA-Dz-OD7"/>
+                                                        <action selector="buttonTapped:" destination="Gln-Yt-wAs" eventType="touchUpInside" id="rWU-Im-Uyt"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="sAh-dK-bAE" secondAttribute="bottom" constant="4" id="EiT-jQ-AYE"/>
+                                        <constraint firstAttribute="trailing" secondItem="sAh-dK-bAE" secondAttribute="trailing" constant="4" id="QgW-5s-kWy"/>
+                                        <constraint firstItem="sAh-dK-bAE" firstAttribute="leading" secondItem="9iP-AV-0LS" secondAttribute="leading" constant="4" id="ZsV-Bz-U2Q"/>
+                                        <constraint firstItem="sAh-dK-bAE" firstAttribute="top" secondItem="9iP-AV-0LS" secondAttribute="top" constant="4" id="liu-dj-1sv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="completeButton" destination="LGn-Yd-O6l" id="bfY-pQ-VIv"/>
+                                    <outlet property="listNameLabel" destination="rQy-in-4JS" id="IdA-EG-b0b"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FSH-QS-ooA" id="nGA-lb-5JQ"/>
+                            <outlet property="delegate" destination="FSH-QS-ooA" id="Va1-RD-OJf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Grocery List" id="Q2B-sg-ydG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rhq-NL-VgL">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="FSH-QS-ooA" id="85c-zm-0Sm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kP1-YB-SE3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="7Fj-PQ-lxu" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="492.75362318840581" y="24.776785714285712"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5fQ-k0-wPG">
+            <objects>
+                <navigationController id="4fw-k1-dWo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t8F-Qf-cQC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FSH-QS-ooA" kind="relationship" relationship="rootViewController" id="YyA-wL-IvI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iHU-0d-3st" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-426" y="25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="square" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
